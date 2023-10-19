@@ -1,0 +1,113 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table credentials {
+  id integer [primary key]
+  username varchar [unique]
+  password varchar
+}
+
+Table user_detail {
+  id integer [primary key]
+  name varchar
+  birthdate timestamp
+  deathdate timestamp
+  originkey int
+  organizationkey int
+  retired bool
+}
+
+Table fight {
+  fightid int [PK]
+  hero_user_id int
+  villain_user_id int
+  winner_user_id int
+}
+
+Table userweapon {
+  userid integer [primary key]
+  weaponid int
+}
+
+Table weapon {
+  weaponid integer [primary key]
+  weapon varchar
+  weaponclass rank
+}
+
+Table userpower {
+  userid integer [primary key]
+  powerkey varchar
+}
+
+Table power {
+  powerkey integer [primary key]
+  power varchar
+}
+
+Table userweekness {
+  userid integer [primary key]
+  weeknesskey varchar
+}
+
+Table weekness {
+  weeknesskey integer [primary key]
+  weekness varchar
+}
+
+Table origin {
+  originkey integer [primary key]
+  origin varchar
+}
+
+Table origanization {
+  organizationkey integer [primary key]
+  organization varchar
+  type varchar
+}
+
+
+Table rank {
+  userid integer [primary key]
+  rankclass varchar
+}
+
+Table rankmap {
+  userid int
+  hero varchar
+  villain varchar
+}
+
+Table mentor {
+  userid int
+  mentorid int
+}
+
+Table sidekick {
+  userid int
+  sidekick int
+}
+
+Ref: credentials.id - user_detail.id
+Ref: user_detail.originkey - origin.originkey
+Ref: "user_detail"."organizationkey" - "origanization"."organizationkey"
+Ref: "userpower"."userid" > "user_detail"."id"
+Ref: "user_detail"."id" < "userweekness"."userid"
+Ref: "user_detail"."id" < "sidekick"."userid"
+Ref: "user_detail"."id" < "userweapon"."userid"
+Ref: "user_detail"."id" < "mentor"."userid"
+Ref: "fight"."hero_user_id" - "user_detail"."id"
+Ref: "fight"."villain_user_id" - "user_detail"."id"
+Ref: "fight"."winner_user_id" - "user_detail"."id"
+Ref: "rank"."userid" - "user_detail"."id"
+Ref: "rankmap"."userid" - "user_detail"."id"
+
+Ref: "weapon"."weaponid" < "userweapon"."weaponid"
+
+Ref: "user_detail"."id" < "mentor"."mentorid"
+
+Ref: "power"."powerkey" < "userpower"."powerkey"
+
+Ref: "weekness"."weeknesskey" < "userweekness"."weeknesskey"
+
+Ref: "user_detail"."id" < "sidekick"."sidekick"
