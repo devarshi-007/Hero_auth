@@ -1,0 +1,21 @@
+weaponid,weapon,weaponclass
+1,Sword,Melee
+2,Hammer,Melee
+3,Staff,Melee
+4,Bow,Ranged
+5,Shuriken,Ranged
+6,Claws,Melee
+7,Shield,Melee
+8,Whip,Melee
+9,Pistol,Ranged
+10,Machine Gun,Ranged
+11,Rifle,Ranged
+12,Energy Blaster,Ranged
+13,War Axe,Melee
+14,Boomerang,Ranged
+15,Katana,Melee
+16,Gauntlets,Melee
+17,Sai,Melee
+18,Dagger,Melee
+19,Throwing Knives,Ranged
+20,Shotgun,Ranged
