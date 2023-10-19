@@ -1,14 +1,9 @@
 package main
 
 import (
-	_ "github.com/lib/pq"
-	"github.com/gofiber/fiber/v2"
-	"github.com/devarshitrivedi01/hero_auth/controllers"
+	"github.com/devarshitrivedi01/hero_auth/routes"
 )
 
-
 func main() {
-	app := fiber.New()
-	app.Get("/users", controllers.UserDetail)
-	app.Listen(":3000")
+	routes.Startup()
 }

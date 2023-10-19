@@ -1,6 +1,9 @@
 package database
 
-import "database/sql"
+import (
+	_ "github.com/lib/pq"
+	"database/sql"
+)
 
 func CreateConnection() *sql.DB {
 	connectionStr := "postgres://devarshi:eA234123Pq@localhost:5432/supreme_org?sslmode=disable"
