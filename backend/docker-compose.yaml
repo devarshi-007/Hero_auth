@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16.0-alpine3.18
+    environment:
+      - POSTGRES_USER=devarshi.trivedi
+      - POSTGRES_PASSWORD=eA@2#34123Pq
+      - POSTGRES_DB=hero_org
+    volumes:
+      - hero_org_volume:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=devarshitrivedi000001@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=eA#2Pbqa@23121
+    ports:
+      - "8080:80"
+
+volumes:
+  hero_org_volume:
