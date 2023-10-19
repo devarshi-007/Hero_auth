@@ -91,18 +91,23 @@ Table sidekick {
 Ref: credentials.id - user_detail.id
 Ref: user_detail.originkey - origin.originkey
 Ref: "user_detail"."organizationkey" - "origanization"."organizationkey"
-Ref: "power"."powerkey" - "userpower"."powerkey"
 Ref: "userpower"."userid" > "user_detail"."id"
 Ref: "user_detail"."id" < "userweekness"."userid"
-Ref: "userweekness"."weeknesskey" - "weekness"."weeknesskey"
 Ref: "user_detail"."id" < "sidekick"."userid"
-Ref: "sidekick"."sidekick" - "user_detail"."id"
 Ref: "user_detail"."id" < "userweapon"."userid"
-Ref: "userweapon"."weaponid" - "weapon"."weaponid"
 Ref: "user_detail"."id" < "mentor"."userid"
-Ref: "mentor"."mentorid" - "user_detail"."id"
 Ref: "fight"."hero_user_id" - "user_detail"."id"
 Ref: "fight"."villain_user_id" - "user_detail"."id"
 Ref: "fight"."winner_user_id" - "user_detail"."id"
 Ref: "rank"."userid" - "user_detail"."id"
 Ref: "rankmap"."userid" - "user_detail"."id"
+
+Ref: "weapon"."weaponid" < "userweapon"."weaponid"
+
+Ref: "user_detail"."id" < "mentor"."mentorid"
+
+Ref: "power"."powerkey" < "userpower"."powerkey"
+
+Ref: "weekness"."weeknesskey" < "userweekness"."weeknesskey"
+
+Ref: "user_detail"."id" < "sidekick"."sidekick"
