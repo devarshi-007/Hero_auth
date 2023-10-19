@@ -1,3 +1,8 @@
+# Concept
+Many people have watch One Punchman. Concept of this repo is This contains website for hero and willain organization. Hero and willain can authorize with session or token.
+
+# Frontend
+
 # Backend
 
 ## Database
