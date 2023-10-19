@@ -10,6 +10,7 @@ Many people have watch One Punchman. Concept of this repo is This contains websi
 2. You can connect to pgadmin on your localhost port 8080, when you do docker-compose up
 3. Connect to DB, password can be found in docker-compose file.
 4. run make migrateup, to make a tables in database. (your current directory should be backend)
+5. CSV files are given, import it in your tables
 
 Note:- db_design.txt file contains postgres for making tables.
 
