@@ -1,9 +1,14 @@
 package main
 
 import (
-	"fmt"
+	_ "github.com/lib/pq"
+	"github.com/gofiber/fiber/v2"
+	"github.com/devarshitrivedi01/hero_auth/controllers"
 )
 
+
 func main() {
-	fmt.Println("Hello, wor")
+	app := fiber.New()
+	app.Get("/users", controllers.UserDetail)
+	app.Listen(":3000")
 }
