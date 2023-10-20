@@ -8,5 +8,5 @@ import (
 func Startup() {
 	app := fiber.New()
 	app.Get("/users", controllers.UserDetail)
-	app.Listen(":3000")
+	app.Listen(":4000")
 }
