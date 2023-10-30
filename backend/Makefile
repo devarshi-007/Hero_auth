@@ -5,7 +5,7 @@ ifneq (, $(@shell ./migrate -version))
 	mv migrate.linux-amd64 migrate
 	chmod +x migrate
 endif
-	migrate create -ext sql -dir database/migrations $(file_name)
+	migrate create -ext sql -dir database/migration $(file_name)
 
 # build:
 # 	go build -o=$(app_name) .
