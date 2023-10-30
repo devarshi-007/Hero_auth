@@ -17,6 +17,8 @@ func Startup() {
 	app.Get("/demo", controllers.Get)
 	app.Get("/bad", controllers.Message)
 	app.Post("/login", controllers.Login)
+	app.Post("/ljwt", controllers.Ljwt)
+	app.Get("/protected", controllers.Protected)
 	app.Use(func(c *fiber.Ctx) error {
 		cookie := c.Cookies("session_id")
 		valid := utils.Valid(cookie)
