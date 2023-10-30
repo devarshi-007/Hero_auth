@@ -1,18 +1,18 @@
 <template>
-    <div class="login-page" v-if="!isLogin">
+    <div class="login-page">
         <div class="login-container">
-            <!-- <form @submit="login" action="/" class="login-form"> -->
-            <h2>Login</h2>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" v-model="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" v-model="password" required>
-            </div>
-            <button type="submit" @click="login">Login</button>
-            <!-- </form> -->
+            <form @submit="login" action="/users" class="login-form">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" v-model="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" v-model="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
         </div>
     </div>
 </template>

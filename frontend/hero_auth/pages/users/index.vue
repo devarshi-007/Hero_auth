@@ -9,6 +9,17 @@
 </div></template>
 
 <script setup>
-const { data: users } = await useFetch('http://localhost:4000/users')
+const users = ref('')
+$fetch(`http://localhost:4000/users`, {
+        method: `GET`,
+        onResponse: ({ response }) => {
+            if (response.status === 200) {
+                users.value = response._data
+            }
+        },
+        credentials: 'include'
+    }).catch(function () {
+        console.log("errrrr")
+    })
 console.log(users.value)
 </script>
